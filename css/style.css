@@ -30,9 +30,6 @@
     margin: 17px;
   }
 
-  .escondido {
-    display: none;
-  }
 
 .face {
     width: 100%;
@@ -63,11 +60,23 @@
     transform: rotateY(180deg);
   }
 
-.clicado {
-    /*transform: rotateY(0deg);*/
-    transform: rotateY(180deg);
+.front-face {
+    backface-visibility: hidden;
+    
   }
 
-.desclicado {
+.clicado {
+    transform: rotateY(180deg);
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+  .desclicado {
     transform: rotateY(-180deg);
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+  .escondido {
+    display: none;
   }
